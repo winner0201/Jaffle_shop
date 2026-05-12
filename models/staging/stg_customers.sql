@@ -1,9 +1,14 @@
-with customers as (
+with source as (
+    -- On utilise les données de démo Databricks pour tester le pipeline
+    select * from samples.tpch.customer
+),
+
+renamed as (
     select
-        id as customer_id,
-        first_name,
-        last_name
-    from jaffle_shop_raw.customers
+        c_custkey as customer_id,
+        c_name as customer_name,
+        c_address as address
+    from source
 )
 
-select * from customers
+select * from renamed
