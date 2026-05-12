@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: jaffle_shop_raw  # C'est le nom que tu utiliseras dans ton SQL
+    database: raw          # Le nom du Catalogue dans Databricks
+    schema: jaffle_shop    # Le nom du Schéma dans Databricks
+    tables:
+      - name: customers    # Le nom de la table
+      - name: orders
+      - name: payments
