@@ -1,7 +1,7 @@
 name: 'jaffle_shop'
 version: '1.0.0'
 config-version: 2
-
+profile: 'databricks'  # <--- AJOUTE CETTE LIGNE
 # C'est ici qu'on définit où dbt cherche les fichiers
 model-paths: ["models"]
 seed-paths: ["seeds"]
