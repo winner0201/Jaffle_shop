@@ -1,8 +1,8 @@
 name: 'jaffle_shop'
 version: '1.0.0'
 config-version: 2
-profile: 'databricks'  # <--- AJOUTE CETTE LIGNE
-# C'est ici qu'on définit où dbt cherche les fichiers
+profile: 'databricks'
+
 model-paths: ["models"]
 seed-paths: ["seeds"]
 test-paths: ["tests"]
@@ -16,9 +16,11 @@ clean-targets:
 
 models:
   jaffle_shop:
+    # Cette section s'applique aux fichiers dans models/staging/
     staging:
-      +schema: staging
+      +schema: staging      # dbt cherchera à créer [votre_schema]_staging
       +materialized: view
+    # Cette section s'applique aux fichiers dans models/marts/
     marts:
-      +schema: marts
+      +schema: marts        # dbt cherchera à créer [votre_schema]_marts
       +materialized: table
