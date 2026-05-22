@@ -1,6 +1,7 @@
+CREATE OR REPLACE  VIEW marketing_db.staging.stg_customers as
 with source as (
-    -- dbt va traduire ceci par raw.jaffle_shop.customers automatiquement
-    select * from {{ source('jaffle_shop_raw', 'customers') }}
+    -- dbt va traduire ceci par raw.jaffle_shop.customers automatiquement*/
+    select * from raw.jaffle_shop.customers
 ),
 
 renamed as (

@@ -1,5 +1,6 @@
+CREATE OR REPLACE  VIEW marketing_db.staging.stg_payments as
 with source as (
-    select * from {{ source('jaffle_shop_raw', 'payments') }}
+    select * from raw.jaffle_shop.payments
 ),
 
 renamed as (
