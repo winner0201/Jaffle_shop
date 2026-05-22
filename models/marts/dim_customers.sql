@@ -1,10 +1,10 @@
 
 with customers as (
-    select * from {{Ref ('stg_customers')}}
+    select * from marketing_db.staging.stg_customers
 ),
 
 orders as (
-    select * from {{Ref ('stg_orders')}} 
+    select * from marketing_db.staging.stg_orders
 ),
 
 customer_orders as (
